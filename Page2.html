@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <title>Website</title>
+  <style>
+     #map {
+      height: 400px;
+      width: 50%;
+    }
+    .header img {
+      max-width: 50px;
+      height: auto;
+    }
+    .popup-image {
+      max-width: 80px;
+      height: auto;
+    }
+    .locations {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    .locations-heading {
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+</head>
+<body>
+  <div class="header">
+    <nav>
+      <img src="https://mma.prnewswire.com/media/1815050/Jollibee_Logo__Horizontal__ID_a6652feaf0c8_Logo.jpg?p=facebook" width="150" height="50"><h2>About Us</h2>
+      <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Page2.html">About us</a></li>
+          <li><a href="Page3.html">Products</a></li>
+        </ul>
+    </nav>
+  </div>
+  <div class="flexbox-container"></div>
+ <div class="flexbox-container">
+  <div class="flexbox-item flexbox-item-1"><p style="color: rgb(255, 255, 255)">I created a website for Jollibee that includes a product page and an about us page. The product page improves the customer experience by allowing easy exploration of Jollibee's menu, placing online orders, and showcasing enticing visuals. The about us page communicates Jollibee's history, values, and community initiatives, building trust with customers and to advertise the resturant through the internet</div>
+  <div class="flexbox-item flexbox-item-2"><p style="color: rgb(255, 255, 255)">Jollibee is a renowned fast-food chain that originated as an ice cream parlor in 1975 in Quezon City, Philippines. Over the years, it has evolved into a global powerhouse in the fast-food industry. What distinguishes Jollibee from its competitors is its ability to blend local Filipino flavors and traditions with international fast-food offerings.
+    Jollibee has successfully created a unique brand identity by catering to the specific tastes of the Filipino market. Its menu features a range of popular items such as Filipino-style spaghetti, chickenjoy (fried chicken), and the iconic Jollibee burger.
+    One of Jollibee's strengths lies in its expansion beyond the Philippines. It has established a strong presence in various countries including the United States, Canada, Saudi Arabia, and Singapore. By offering a combination of Filipino favorites and Western fast-food options, Jollibee appeals to a diverse customer base.
+    What sets Jollibee apart is its emphasis on core values and the emotional connection it forges with customers. The brand has created a beloved mascot named Jollibee, a friendly bee that symbolizes the company. Jollibee's marketing campaigns evoke feelings of family, happiness, and togetherness, striking a chord with its target audience.</p></div>
+  <div class="flexbox-item flexbox-item-3"><p style="color: rgb(255, 255, 255)">Once upon a time, in the bustling city of Manila, Philippines, a young entrepreneur named Tony Tan Caktiong had a vision. It was the year 1975 when he and his family opened a small ice cream parlor called "Jolibe" (pronounced as "jolly bee") in the Cubao district. Little did they know that this humble venture would eventually become a beloved fast-food giant known as Jollibee.
+    Originally, Jolibe focused on serving delicious ice cream treats, drawing inspiration from American-style ice cream parlors. However, Tony Tan Caktiong realized that Filipinos had an appetite for more than just ice cream. With an astute business mind, he decided to expand the menu to include quick-service meals that catered to the Filipino palate.
+    In 1978, Jolibe rebranded as "Jollibee" and transformed into a fast-food restaurant. The iconic mascot, a jolly bee named "Jollibee," was introduced, capturing the hearts of children and adults alike. The Filipino people quickly embraced the friendly bee with open arms, as Jollibee represented joy, happiness, and the warmth of family gatherings.</div>
+ </div>
+ <div class="locations">
+  <h1 class="locations-heading">Some of our locations in the Philippines</h1>
+  <div id="map"></div>
+</div>
+
+  <script>
+    var map = L.map('map').setView([14.42052, 121.03569], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    var markers = L.markerClusterGroup();
+
+    var jollibeeLocations = [
+      { name: "Commerce Spectrum Ave., Filinvest, Alabang Muntinlupa, Muntinlupa, Metro Manila", lat: 14.42052, lng: 121.03569, image: "https://lh5.googleusercontent.com/p/AF1QipNAag_EtLptnJ4ryVbdPlFrbhjgj-ZNHJPmBl-p=w408-h544-k-no" },
+      { name: "1720 Dr Arcadio Santos Ave, San Isidro, Parañaque, 1720 Metro Manila", lat: 14.46822, lng: 121.01673, image: "https://lh5.googleusercontent.com/p/AF1QipPZUvaWpCjXrxLob5deBtSNd7Nf0jhW5_pWSqIL=w408-h306-k-no" },
+      { name: "Alabang Junction near South Expressway along, Alabang–Zapote Rd, Alabang, Muntinlupa, Metro Manila", lat: 14.41919, lng: 121.04372, image: "https://lh5.googleusercontent.com/p/AF1QipPBOgN8b7dtN--0uJyNik9vh1oHN0X8w82wMl9j=w408-h408-k-no" },
+      { name: "F@st Bytes, Orient Ln, Muntinlupa, 1781 Metro Manila", lat: 14.42582, lng: 121.03972, image: "https://lh5.googleusercontent.com/p/AF1QipNwUXskmOFluJE8g2wy8pU0O0EHnrmm22YOqoQU=w408-h306-k-no" },
+    ];
+
+    jollibeeLocations.forEach(function(location) {
+      var marker = L.marker([location.lat, location.lng]);
+      marker.bindPopup('<h3>' + location.name + '</h3><img class="popup-image" src="' + location.image + '" alt="Jollibee Location">');
+      markers.addLayer(marker);
+    });
+
+    map.addLayer(markers);
+  </script>
+  <footer>
+    <p>This website is not real and is created for educational purposes only.</p>
+  </footer>
+</body>
+</html>

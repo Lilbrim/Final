@@ -1,0 +1,134 @@
+body {
+    background-image: url("BACKGROUND.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 999;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    background-color: #ff2727;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+section {
+    padding: 10px;
+}
+.next-image {
+    max-width: 50px; 
+}
+  .container {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    background-color: transparent;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 20px
+  }
+  .flexbox-item{
+    width: 200px;
+    margin: 10px;
+    border: 30px;
+    background-color: #e60000;
+  }
+  .flexbox-item-1{
+    min-height: 500px;
+    width:500px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .flexbox-item-2{
+    min-height: 500px;
+    width:500px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .flexbox-item-3{
+    min-height: 500px;
+    width:500px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .item {
+    background-color: rgb(255, 0, 0);
+    margin:200;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px; 
+  }
+  .text{
+    color: #fff;
+  }
+ .btn {
+  background-color: #ffcc00;
+  color: #ff0909;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff9900;
+}
+
+.btn:active {
+  background-color: #e68a00;
+}
+
+div.scroll-container {
+    background-color: #ff0101;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin-top: 50px;
+  }
+  
+  div.scroll-container img {
+    padding: 10px;
+  }
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 1px;
+  }
